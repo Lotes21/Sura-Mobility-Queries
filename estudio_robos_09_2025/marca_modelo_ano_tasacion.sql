@@ -70,9 +70,7 @@ FROM TRANSACCIONAL.DBO.Tablero_Motor AS tm
 INNER JOIN tasaciones_promedio_marca_modelo_ano AS tas
     ON tm.marca = tas.marca AND tm.modelo = tas.modelo AND tm.nanfaveh = tas.año
 WHERE
-    tm.linea_negocio LIKE '%Personal%'
-    AND tm.vigencia LIKE '%ANUAL%'
-    AND tm.nanfaveh <> 0
+    tm.nanfaveh <> 0
 GROUP BY
     tas.tasacion_avg,
     tm.nnumdocu,
